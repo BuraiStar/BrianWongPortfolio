@@ -1,6 +1,7 @@
 import CreateTheme from "@mui/material/styles/createTheme";
 import { orange, purple } from "@mui/material/colors";
 
+
 export const custTheme = CreateTheme({
   palette: {
     mode: "dark",
