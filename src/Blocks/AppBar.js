@@ -12,7 +12,7 @@ import styled from "@emotion/styled";
 import { Switch, FormControlLabel } from "@mui/material";
 import { useThemeContext } from "../Scripts/ColorChangeContext";
 import {useState} from "react"
-import { amber } from "@mui/material/colors";
+import { amber, lightBlue } from "@mui/material/colors";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -37,7 +37,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : amber[200],
+    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : lightBlue[200],
     width: 32,
     height: 32,
     '&:before': {
@@ -70,7 +70,7 @@ export default function ButtonAppBar() {
     <Box sx={{ flexGrow: 1}}>
       <AppBar position="static" sx ={{backgroundColor : (theme) => theme.palette.primary.main}}>
         <Toolbar>
-          <IconButton
+          {/*<IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -78,7 +78,7 @@ export default function ButtonAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+         </IconButton>*/}
           
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Brian Wong Wei Wen

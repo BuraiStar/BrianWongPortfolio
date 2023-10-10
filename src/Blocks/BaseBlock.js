@@ -5,6 +5,8 @@ import Page1 from "./Page1";
 import { CssBaseline, responsiveFontSizes } from "@mui/material";
 import {  useThemeContext } from "../Scripts/ColorChangeContext";
 import { ThemeProvider } from "@emotion/react";
+import FirstPageCarousel from "./FirstPageCarousel";
+import ExperienceBlock from "./ExperienceBlock";
 
 export default function BaseBlock() {
     const { theme } = useThemeContext();
@@ -13,7 +15,9 @@ export default function BaseBlock() {
             <CssBaseline/>
             <Paper sx={{ color: "#AAAAAA" }}>
                 <AppBar />
+                <FirstPageCarousel/>
                 <Page1/>
+                <ExperienceBlock/>
             </Paper>
         </ThemeProvider>
     )

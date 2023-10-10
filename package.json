@@ -9,6 +9,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-simple-toasts": "^5.10.0",
+    "react-stack-grid": "^0.7.1",
+    "sass": "^1.69.0",
     "typescript": "latest"
   },
   "description": "https://github.com/mui/material-ui/blob/v5.14.9/docs/data/material/components/app-bar/ButtonAppBar.tsx",

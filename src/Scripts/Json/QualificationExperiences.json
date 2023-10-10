@@ -1,0 +1,21 @@
+{
+    "qualifications" : [
+        {
+            "qualificationName" : "Python",
+            "duration" : "May 2023 - June 2023",
+            "linkArial" : "W3Schools Website",
+            "link" : "https://www.w3schools.com/",
+            "qualificationLink": "/Certificates/certificate_of_completion_python.pdf",
+            "pictures": {"imageLink" : "images/w3schools.png", "imageKey" : "w3Schools"},
+            "shortDescription": "I studied Python classes on a basic level to learn how code in python."},
+        {
+            "qualificationName" : "KDU University",
+            "duration" : "January 2017 - December 2019",
+            "linkArial" : "KDUUC Website",
+            "link" : "https://www.uow.edu.my/",
+            "qualificationLink": "/Certificates/Brian Degree certificate.pdf",
+            "pictures": {"imageLink" : "images/KDU-University-College-KDU-logo.png", "imageKey" : "KDUUniversity"},
+            "shortDescription": "I studied in KDU University College to become a game developer, with the major of programming. The main language I learned is C# and C++"
+        }
+    ]
+}

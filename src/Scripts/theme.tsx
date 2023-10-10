@@ -1,20 +1,26 @@
 import { PaletteMode } from "@mui/material";
-import { amber, orange, grey, yellow, red } from "@mui/material/colors";
+import { amber, orange, grey, yellow, red, lightBlue, purple } from "@mui/material/colors";
 
 const theme = {
   palette: {
     mode:"dark",
-    primary: amber,
-    secondary: yellow,
+    primary: lightBlue,
+    secondary: lightBlue,
     customBackgroundColor:{
       even: "#464545",
-      odd:  "#575656"
+      odd:  "#575656",
+      defaultDarker: "#e1f5fe"
     }
   },
   typography: {
+    htmlFontSize: 8,
     h1: { fontSize: '5rem' },
+    h2: { fontSize: '4rem' },
+    h3: { fontSize: '3rem' },
+    h4: { fontSize: '2.5rem' },
     h5: { fontSize: "2rem"},
     h6: { fontSize: "1.5rem"},
+    body: {fontSize : "1rem"}
   },
   breakpoints: {
     values: {
@@ -37,16 +43,25 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     ...(mode === "light"
       ? {
           // palette values for light mode
-          primary: amber,
-          secondary: yellow,
-          divider: amber[200],
+          primary: lightBlue,
+          secondary: lightBlue,
+          divider: purple[200],
+          background: {
+            default: "#f3e5f5",
+            defaultDarker: "#e1f5fe",
+            paper: "#e1f5fe",
+          },
           text: {
-            primary: red[900],
-            secondary: red[800],
+            primary: purple[900],
+            secondary: purple[800],
           },
           customBackgroundColor:{
             even: yellow,
-            odd:  yellow
+            odd:  "#fff",
+            defaultDarker: "#b3e5fc"
+          },
+          customCarouselColor: {
+            primary : "hsl(196, 60%, calc(100% - var(--abs-offset) * 50%))"
           },
           customTextColor:{
             main: "#000"
@@ -59,7 +74,8 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           secondary: red,
           divider: orange[700],
           background: {
-            default: "#111",
+            default: "#222",
+            defaultDarker: "#111",
             paper: "#111",
           },
           text: {
@@ -68,7 +84,11 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           },
           customBackgroundColor:{
             even: "#464545",
-            odd:  "#575656"
+            odd:  "#575656", 
+            defaultDarker: "#111"
+          },
+          customCarouselColor: {
+            primary : "hsl(0, 0%, calc(0% + var(--abs-offset) * 50%))"
           },
           customTextColor:{
             main: "#fff"
@@ -76,6 +96,15 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           toastColor: orange[500],
         }
       ),
+  },typography: {
+    htmlFontSize: 16,
+    h1: { fontSize: '5rem' },
+    h2: { fontSize: '4rem' },
+    h3: { fontSize: '3rem' },
+    h4: { fontSize: '2.5rem' },
+    h5: { fontSize: "2rem"},
+    h6: { fontSize: "1.5rem"},
+    body: {fontSize : "1rem"}
   },
 });
 
