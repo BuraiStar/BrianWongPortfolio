@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "outDir": "dist",
     "target": "es5",
     "lib": [
       "dom",
@@ -22,5 +27,7 @@
   "include": [
     "src",
     "src/declaration.d.ts", "src/static/css/carousel.js",
+    "scripts/**/*",
+    "src/**/*"
   ]
 }

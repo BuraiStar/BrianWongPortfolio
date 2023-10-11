@@ -7,6 +7,7 @@ import {  useThemeContext } from "../Scripts/ColorChangeContext";
 import { ThemeProvider } from "@emotion/react";
 import FirstPageCarousel from "./FirstPageCarousel";
 import ExperienceBlock from "./ExperienceBlock";
+import Footer from "./Footer";
 
 export default function BaseBlock() {
     const { theme } = useThemeContext();
@@ -18,6 +19,7 @@ export default function BaseBlock() {
                 <FirstPageCarousel/>
                 <Page1/>
                 <ExperienceBlock/>
+                <Footer/>
             </Paper>
         </ThemeProvider>
     )

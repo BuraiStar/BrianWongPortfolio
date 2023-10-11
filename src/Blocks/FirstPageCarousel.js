@@ -6,15 +6,15 @@ import IconButton from "@mui/material/IconButton"
 import Typography from "@mui/material/Typography";
 import React, {useState} from "react"
 import "../static/css/card.scss"
-import {TiChevronLeftOutline, TiChevronRightOutline} from 'https://cdn.skypack.dev/react-icons/ti';
 import CarouselItems from "../Scripts/Json/CarouselItems.json"
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import {TiChevronLeftOutline, TiChevronRightOutline} from "react-icons/ti"
 
 const MAX_VISIBILITY = 3;
 
 const CardObject = ({jsonObject}) => (
-    <Card variant="outlined" xs={1} sx={{ padding: "2rem", borderColor: (theme) => theme.palette.divider, borderRadius: "1rem", transition : " all 0.3s ease-out", backgroundColor: (theme) => theme.palette.customCarouselColor.primary}}>
+    <Card variant="outlined" sx={{ padding: "1rem", borderColor: (theme) => theme.palette.divider, borderRadius: "1rem", transition : " all 0.3s ease-out", backgroundColor: (theme) => theme.palette.customCarouselColor.primary}}>
         <CardMedia
             component="img"
             width = "100%"
@@ -64,10 +64,10 @@ const CardObject = ({jsonObject}) => (
 export default function FirstPageCarousel(){
 
     return (
-        <Paper sx={{backgroundColor: (theme) => theme.palette.customBackgroundColor.odd, width: "100vw", height: "890px",
+        <Paper sx={{backgroundColor: (theme) => theme.palette.customBackgroundColor.odd, width: "100%", height: "890px",
          alignItems: "center", verticalAlign: "center", textAlign: "center", justifyContent : "center", flexWrap: "wrap", flexGrow: "1"}}>
             <Typography variant= "h1" component="div" sx={{py: 5, fontWeight: "Bold"}}> Welcome to my Portfolio</Typography>
-            <Typography variant= "h3" > These are my past works</Typography>
+            <Typography variant= "h3"> These are my past works</Typography>
             <Carousel>
                 {CarouselItems && CarouselItems.CarouselItems.map((value, i) => (
                     <CardObject key={value.ID} jsonObject={value}/>

@@ -57,7 +57,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           },
           customBackgroundColor:{
             even: yellow,
-            odd:  "#fff",
+            odd:  "#ddd",
             defaultDarker: "#b3e5fc"
           },
           customCarouselColor: {

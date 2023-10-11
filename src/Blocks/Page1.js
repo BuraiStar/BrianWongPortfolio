@@ -26,20 +26,26 @@ export default function DisplayPage1() {
     if (newState.gridOneOpen) return true;
     return false
   }
-
+  const {innerWidth} = window;
   return (
     <Box sx = {{flexGrow: 1, py:2, backgroundColor: (theme) => theme.palette.customBackgroundColor.even}}>
       <Grid container direction="row" justifyContent={"space-around"} alignItems={"flex-start"} spacing={1} sx = {{transition: "all .3s ease-in-out" }}>
-        <Grid item xs={3} sx={{transition: "all .3s ease-in-out" }}>
+      {
+        innerWidth > 600 ? 
+          <><Grid item xs={3} sx={{ transition: "all .3s ease-in-out" }}>
+              <InfoBlock />
+            </Grid><Grid item xs={getIfOneExpanded() ? getWhichExpanded() ? 4 : 3 : 3} sx={{ transition: "all .3s ease-in-out" }}>
+                <PreviousWork parentCallback={handleCallback} />
+              </Grid><Grid item xs={getIfOneExpanded() ? getWhichExpanded() ? 3 : 4 : 3} sx={{ transition: "all .3s ease-in-out" }}>
+                <Qualifications />
+              </Grid></>
+       :<Grid item xs={11} sx={{transition: "all .3s ease-in-out" }}>
           <InfoBlock/>
-        </Grid>
-        <Grid item xs={getIfOneExpanded() ? getWhichExpanded() ? 4 : 3 : 3}  sx={{ transition: "all .3s ease-in-out"}}>
-            <PreviousWork parentCallback={handleCallback}/>
-        </Grid>
-        <Grid item xs={getIfOneExpanded() ? getWhichExpanded() ? 3: 4 : 3}  sx={{ transition: "all .3s ease-in-out"}}>
+          <PreviousWork parentCallback={handleCallback}/>
           <Qualifications/>
         </Grid>
-      </Grid>
+      }
+      </Grid> 
       
     </Box>
     
