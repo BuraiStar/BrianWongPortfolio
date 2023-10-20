@@ -20,7 +20,7 @@ $card-size: 23rem;
 
 .card-container {
   position: absolute;
-  width: 100%;
+  width: 85%;
   height: 100%;
   transform: 
     rotateY(calc(var(--offset) * 50deg)) 
@@ -70,11 +70,11 @@ $card-size: 23rem;
   border: unset;
   
   &.left {
-    transform: translateX(-100%) translatey(-50%);
+    transform: translateX(-85%) translatey(-50%);
   }
   
   &.right {
     right: 0;
-    transform: translateX(100%) translatey(-50%);
+    transform: translateX(85%) translatey(-50%);
   }
 }

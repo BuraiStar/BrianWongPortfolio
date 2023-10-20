@@ -6,7 +6,7 @@ import InfoBlock from "./Objects/InfoBlock";
 import PreviousWork from "./Objects/PreviousWork";
 import Qualifications from "./Objects/Qualifications";
 
-export default function DisplayPage1() {
+export default function DisplayPage1(windowSize) {
   const [newState, setNewState] = React.useState({gridOneOpen: false, gridTwoOpen: false})
 
   const handleCallback = (ChildID, gridOpen) => {
@@ -31,7 +31,7 @@ export default function DisplayPage1() {
     <Box sx = {{flexGrow: 1, py:2, backgroundColor: (theme) => theme.palette.customBackgroundColor.even}}>
       <Grid container direction="row" justifyContent={"space-around"} alignItems={"flex-start"} spacing={1} sx = {{transition: "all .3s ease-in-out" }}>
       {
-        innerWidth > 600 ? 
+        windowSize.windowSize ? 
           <><Grid item xs={3} sx={{ transition: "all .3s ease-in-out" }}>
               <InfoBlock />
             </Grid><Grid item xs={getIfOneExpanded() ? getWhichExpanded() ? 4 : 3 : 3} sx={{ transition: "all .3s ease-in-out" }}>

@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import StackGrid from "react-stack-grid";
 import Experiences from "../Scripts/Json/Experience.json"
 
-export default function ExperienceBlock(){
+export default function ExperienceBlock(windowSize){
     return (
         <Paper sx={{backgroundColor: (theme) => theme.palette.customBackgroundColor.odd, py: 1,
         alignItems: "center", verticalAlign: "center", textAlign: "center",flexWrap: "wrap", flexGrow: "1"}}>
@@ -23,7 +23,8 @@ export default function ExperienceBlock(){
                 </Grid>
             </Grid>
             <Grid container direction="row" justifyContent={"center"} alignItems={"flex-start"} spacing={3} sx = {{transition: "all .3s ease-in-out" }}>
-                <Grid item>
+                {
+                    windowSize.windowSize ? <><Grid item>
                     {
                     Experiences && Experiences.Language.map((record,id)=> {
                         return id < 3 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
@@ -67,7 +68,40 @@ export default function ExperienceBlock(){
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
                         </Card>
                     })}
+                </Grid></> : <>
+                <Grid item>
+                    {
+                    Experiences && Experiences.Language.map((record,id)=> {
+                        return id < 5 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                            <CardMedia
+                            component="img"
+                            width = "50%"
+                            image={record.ImageLink}/>
+                            <Typography>{record.Name}</Typography>
+                            <Typography>{record.ShortDescription}</Typography>
+                            <Typography>Experience</Typography>
+                            <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
+                        </Card>
+                    })}
                 </Grid>
+                <Grid item>
+                    {
+                    Experiences && Experiences.Language.map((record,id)=> {
+                        return id >= 5 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                            <CardMedia
+                            component="img"
+                            width = "50%"
+                            image={record.ImageLink}/>
+                            <Typography>{record.Name}</Typography>
+                            <Typography>{record.ShortDescription}</Typography>
+                            <Typography>Experience</Typography>
+                            <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
+                        </Card>
+                    })}
+                </Grid></>
+                    
+                }
+                
             </Grid>
             <Grid
                 container
@@ -85,7 +119,6 @@ export default function ExperienceBlock(){
                     {
                     Experiences && Experiences.Software.map((record,id)=> {
                         return id >= 3 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
-                            
                             <CardMedia
                             component="img"
                             width = "50%"
