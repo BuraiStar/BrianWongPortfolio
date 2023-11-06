@@ -4,6 +4,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import React from "react";
 import QualificationExperiences from "../../Scripts/Json/QualificationExperiences.json";
+import { FadeInSection } from "./InfoBlock";
 
 export default function Qualifications(){
     return(
@@ -29,35 +30,37 @@ export default function Qualifications(){
                 }}> 
                     {QualificationExperiences && QualificationExperiences.qualifications.map((record, i) => {
                         return (
-                            <Card variant="outlined" sx={{ my: 1, transition: "all .3s ease-in-out", bgcolor: (theme) => theme.palette.background.default }} key={record.qualificationName + i}>
-                                <CardHeader
-                                    avatar={<Avatar sx={{ bgcolor: (theme) => theme.palette.text.primary }} aria-label="Latest">
-                                        BW
-                                    </Avatar>}
-                                    title={record.qualificationName}
-                                    subheader={record.duration}
-                                >
-                                </CardHeader>
-                                <CardMedia
-                                    component="img"
-                                    width = "100%"
-                                    image={record.pictures.imageLink}
-                                    alt={record.qualificationName}
-                                    key={record.pictures.imageKey}/>
-                                <CardContent>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {record.shortDescription}
-                                    </Typography>
-                                </CardContent>
-                                <CardActions disableSpacing>
-                                    <IconButton aria-label={record.linkArial} href={record.link} target="_blank" title={record.linkArial}>
-                                        <OpenInNewIcon />
-                                    </IconButton>
-                                    <IconButton sx= {{marginLeft: "auto"}} aria-label={record.qualificationName + "_Qualification"} href={record.qualificationLink} target="_blank" title={record.qualificationName + "_Qualification"}>
-                                        <AccountBoxIcon />
-                                    </IconButton>
-                                </CardActions>
-                            </Card>
+                            <FadeInSection key={i}>
+                                <Card variant="outlined" sx={{ my: 1, transition: "all .3s ease-in-out", bgcolor: (theme) => theme.palette.background.default }} key={record.qualificationName + i}>
+                                    <CardHeader
+                                        avatar={<Avatar sx={{ bgcolor: (theme) => theme.palette.text.primary }} aria-label="Latest">
+                                            BW
+                                        </Avatar>}
+                                        title={record.qualificationName}
+                                        subheader={record.duration}
+                                    >
+                                    </CardHeader>
+                                    <CardMedia
+                                        component="img"
+                                        width = "100%"
+                                        image={record.pictures.imageLink}
+                                        alt={record.qualificationName}
+                                        key={record.pictures.imageKey}/>
+                                    <CardContent>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {record.shortDescription}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions disableSpacing>
+                                        <IconButton aria-label={record.linkArial} href={record.link} target="_blank" title={record.linkArial}>
+                                            <OpenInNewIcon />
+                                        </IconButton>
+                                        <IconButton sx= {{marginLeft: "auto"}} aria-label={record.qualificationName + "_Qualification"} href={record.qualificationLink} target="_blank" title={record.qualificationName + "_Qualification"}>
+                                            <AccountBoxIcon />
+                                        </IconButton>
+                                    </CardActions>
+                                </Card>
+                            </FadeInSection>
                         );
                     })}
 

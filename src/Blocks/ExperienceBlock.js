@@ -2,6 +2,7 @@ import { Card, CardMedia, Grid, Typography, Rating } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import StackGrid from "react-stack-grid";
 import Experiences from "../Scripts/Json/Experience.json"
+import { FadeInSection } from "./Objects/InfoBlock";
 
 export default function ExperienceBlock(windowSize){
     return (
@@ -27,7 +28,7 @@ export default function ExperienceBlock(windowSize){
                     windowSize.windowSize ? <><Grid item>
                     {
                     Experiences && Experiences.Language.map((record,id)=> {
-                        return id < 3 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                        return id < 3 && <FadeInSection key = {id}> <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
                             <CardMedia
                             component="img"
                             width = "50%"
@@ -36,13 +37,13 @@ export default function ExperienceBlock(windowSize){
                             <Typography>{record.ShortDescription}</Typography>
                             <Typography>Experience</Typography>
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
-                        </Card>
+                        </Card></FadeInSection>
                     })}
                 </Grid>
                 <Grid item>
                     {
                     Experiences && Experiences.Language.map((record,id)=> {
-                        return id >= 3 && id < 6 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                        return id >= 3 && id < 6 &&<FadeInSection key = {id-3}>  <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
                             <CardMedia
                             component="img"
                             width = "50%"
@@ -51,13 +52,13 @@ export default function ExperienceBlock(windowSize){
                             <Typography>{record.ShortDescription}</Typography>
                             <Typography>Experience</Typography>
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
-                        </Card>
+                        </Card></FadeInSection>
                     })}
                 </Grid>
                 <Grid item>
                     {
                     Experiences && Experiences.Language.map((record,id)=> {
-                        return id >= 6 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                        return id >= 6 && <FadeInSection key = {id-6}><Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
                             <CardMedia
                             component="img"
                             width = "50%"
@@ -67,12 +68,13 @@ export default function ExperienceBlock(windowSize){
                             <Typography>Experience</Typography>
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
                         </Card>
+                        </FadeInSection>
                     })}
                 </Grid></> : <>
                 <Grid item>
                     {
                     Experiences && Experiences.Language.map((record,id)=> {
-                        return id < 5 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                        return id < 5 && <FadeInSection key = {id}><Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
                             <CardMedia
                             component="img"
                             width = "50%"
@@ -81,13 +83,13 @@ export default function ExperienceBlock(windowSize){
                             <Typography>{record.ShortDescription}</Typography>
                             <Typography>Experience</Typography>
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
-                        </Card>
+                        </Card></FadeInSection>
                     })}
                 </Grid>
                 <Grid item>
                     {
                     Experiences && Experiences.Language.map((record,id)=> {
-                        return id >= 5 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                        return id >= 5 && <FadeInSection key = {id-5}><Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
                             <CardMedia
                             component="img"
                             width = "50%"
@@ -96,7 +98,7 @@ export default function ExperienceBlock(windowSize){
                             <Typography>{record.ShortDescription}</Typography>
                             <Typography>Experience</Typography>
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
-                        </Card>
+                        </Card></FadeInSection>
                     })}
                 </Grid></>
                     
@@ -118,7 +120,7 @@ export default function ExperienceBlock(windowSize){
                 <Grid item>
                     {
                     Experiences && Experiences.Software.map((record,id)=> {
-                        return id >= 3 && <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
+                        return id >= 3 && <FadeInSection key = {id-3}> <Card key={record.Name} sx={{marginBottom : 2, maxWidth: 200}}>
                             <CardMedia
                             component="img"
                             width = "50%"
@@ -127,13 +129,13 @@ export default function ExperienceBlock(windowSize){
                             <Typography>{record.ShortDescription}</Typography>
                             <Typography>Experience</Typography>
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
-                        </Card>
+                        </Card></FadeInSection>
                     })}
                 </Grid>
                 <Grid item>
                     {
                     Experiences && Experiences.Software.map((record,id)=> {
-                        return id < 3 && <Card key={record.Name}  sx={{marginBottom : 2, maxWidth: 200}}>
+                        return id < 3 && <FadeInSection key = {id}><Card key={record.Name}  sx={{marginBottom : 2, maxWidth: 200}}>
                             <CardMedia
                             component="img"
                             width = "50%"
@@ -143,6 +145,8 @@ export default function ExperienceBlock(windowSize){
                             <Typography>Experience</Typography>
                             <Rating name="read-only" value={record.AmountOfExperience/2} precision={0.5} readOnly />
                         </Card>
+
+                        </FadeInSection>
                     })}
                 </Grid>
             </Grid>
