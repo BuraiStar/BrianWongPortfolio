@@ -3,10 +3,9 @@ import { red } from "@mui/material/colors";
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import React from "react";
-import QualificationExperiences from "../../Scripts/Json/QualificationExperiences.json";
 import { FadeInSection } from "./InfoBlock";
 
-export default function Qualifications(){
+export default function Qualifications({qualificationPosts}){
     return(
             <Grid item sx={{justifyContent: "center"}}>
                 <Paper
@@ -28,7 +27,7 @@ export default function Qualifications(){
                         backgroundColor: (theme) => theme.palette.background.defaultDarker,
                         transition: "all .3s ease-in-out"
                 }}> 
-                    {QualificationExperiences && QualificationExperiences.qualifications.map((record, i) => {
+                    {qualificationPosts && qualificationPosts.map((record, i) => {
                         return (
                             <FadeInSection key={i}>
                                 <Card variant="outlined" sx={{ my: 1, transition: "all .3s ease-in-out", bgcolor: (theme) => theme.palette.background.default }} key={record.qualificationName + i}>
@@ -37,15 +36,13 @@ export default function Qualifications(){
                                             BW
                                         </Avatar>}
                                         title={record.qualificationName}
-                                        subheader={record.duration}
+                                        subheader={record.startExperience + " - " + record.endExperience}
                                     >
                                     </CardHeader>
                                     <CardMedia
                                         component="img"
                                         width = "100%"
-                                        image={record.pictures.imageLink}
-                                        alt={record.qualificationName}
-                                        key={record.pictures.imageKey}/>
+                                        image={record.image}/>
                                     <CardContent>
                                         <Typography variant="body2" color="text.secondary">
                                             {record.shortDescription}

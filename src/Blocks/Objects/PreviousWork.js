@@ -4,7 +4,6 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { ExpandMore } from "../../Scripts/styles/ExpandMoreButton";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from "react";
-import WorkExperiences from "../../Scripts/Json/WorkExperiences.json";
 import { FadeInSection } from "./InfoBlock";
 
 export default function PreviousWork(props){
@@ -58,7 +57,7 @@ export default function PreviousWork(props){
                             backgroundColor: (theme) => theme.palette.customBackgroundColor.defaultDarker,
                             transition: "all .3s ease-in-out"
                         }}>
-                            {WorkExperiences && WorkExperiences.pastExperiences.map((record, i) => {
+                            {props.experiencePosts && props.experiencePosts.map((record, i) => {
                                 return (
                                     <FadeInSection key={i }>
                                         <Card variant="outlined" sx={{ my: 1, transition: "all .3s ease-in-out", bgcolor: (theme) => theme.palette.background.default }} key={record.companyName + i}>
@@ -73,9 +72,9 @@ export default function PreviousWork(props){
                                             <CardMedia
                                                 component="img"
                                                 width = "100%"
-                                                image={record.pictures[0].imageLink}
+                                                image={record.image1}
                                                 alt={record.companyName}
-                                                key={record.pictures[0].imageKey}/>
+                                                key={record.companyName + "1"}/>
                                             <CardContent>
                                                 <Collapse in={!arrayExpanded[i]} timeout="auto" unmountOnExit>
                                                     <Typography variant="body2" color="text.secondary">
@@ -97,30 +96,23 @@ export default function PreviousWork(props){
                                             <Collapse in={arrayExpanded[i]} timeout="auto" unmountOnExit>
                                                 <CardContent>
                                                     <Typography>
-                                                        {record.longDescription[0]}
+                                                        {record.longDescription1}
                                                     </Typography>
                                                     <CardMedia
                                                         component="img"
-                                                        image={record.pictures[1].imageLink}
+                                                        image={record.image2}
                                                         alt={record.companyName}
-                                                        key={record.pictures[1].imageKey}
-                                                        sx={{ my: 1.5 }} />
+                                                        key={record.companyName + "2"}/>
                                                     <Typography>
-                                                        {record.longDescription[1]}
+                                                        {record.longDescription2}
                                                     </Typography>
-                                                    {record.pictures.map((value, index) => {
-                                                        if (index > 1) {
-                                                            return (
-                                                                <CardMedia
-                                                                    component="img"
-                                                                    height="194"
-                                                                    image={value.imageLink}
-                                                                    alt={record.companyName}
-                                                                    key={value.imageKey}
-                                                                    sx={{ marginTop: 1.5 }} />
-                                                            );
-                                                        }
-                                                    })}
+                                                    <CardMedia
+                                                        component="img"
+                                                        height="194"
+                                                        image={record.image3}
+                                                        alt={record.companyName}
+                                                        key={record.companyName + "3"}
+                                                        sx={{ my: 1.5 }} />
                                                 </CardContent>
                                             </Collapse>
                                         </Card>
@@ -150,7 +142,7 @@ export default function PreviousWork(props){
                             backgroundColor: (theme) => theme.palette.customBackgroundColor.defaultDarker,
                             transition: "all .3s ease-in-out"
                         }}>
-                            {WorkExperiences && WorkExperiences.pastExperiences.map((record, i) => {
+                            {props.experiencePosts && props.experiencePosts.map((record, i) => {
                                 return (
                                     <FadeInSection key={i}>
                                         <Card variant="outlined" sx={{ my: 1, transition: "all .3s ease-in-out", bgcolor: (theme) => theme.palette.background.default }} key={record.companyName + i}>
@@ -165,9 +157,9 @@ export default function PreviousWork(props){
                                             <CardMedia
                                                 component="img"
                                                 width = "100%"
-                                                image={record.pictures[0].imageLink}
+                                                image={record.image1}
                                                 alt={record.companyName}
-                                                key={record.pictures[0].imageKey} />
+                                                key={record.image1 + "1"} />
                                             <CardContent>
                                                 <Collapse in={!arrayExpanded[i]} timeout="auto" unmountOnExit>
                                                     <Typography variant="body2" color="text.secondary">
@@ -189,31 +181,25 @@ export default function PreviousWork(props){
                                             <Collapse in={arrayExpanded[i]} timeout="auto" unmountOnExit>
                                                 <CardContent>
                                                     <Typography>
-                                                        {record.longDescription[0]}
+                                                        {record.longDescription1}
                                                     </Typography>
                                                     <CardMedia
                                                         component="img"
                                                         height="194"
-                                                        image={record.pictures[1].imageLink}
+                                                        image={record.image2}
                                                         alt={record.companyName}
-                                                        key={record.pictures[1].imageKey}
+                                                        key={record.companyName + "2"}
                                                         sx={{ my: 1.5 }} />
                                                     <Typography>
-                                                        {record.longDescription[1]}
+                                                        {record.longDescription2}
                                                     </Typography>
-                                                    {record.pictures.map((value, index) => {
-                                                        if (index > 1) {
-                                                            return (
-                                                                <CardMedia
-                                                                    component="img"
-                                                                    height="194"
-                                                                    image={value.imageLink}
-                                                                    alt={record.companyName}
-                                                                    key={value.imageKey}
-                                                                    sx={{ marginTop: 1.5 }} />
-                                                            );
-                                                        }
-                                                    })}
+                                                    <CardMedia
+                                                        component="img"
+                                                        height="194"
+                                                        image={record.image3}
+                                                        alt={record.companyName}
+                                                        key={record.companyName + "3"}
+                                                        sx={{ my: 1.5 }} />
                                                 </CardContent>
                                             </Collapse>
                                         </Card>

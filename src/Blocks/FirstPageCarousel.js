@@ -72,13 +72,14 @@ const CardObject = ({jsonObject}) => {
   };
 
 export default function FirstPageCarousel({windowSize, carouselPosts}){
+    let reversePosts = [...carouselPosts].reverse();
     return (
         <Paper sx={{backgroundColor: (theme) => theme.palette.customBackgroundColor.odd, height: windowSize ? "890px" : "880px",
          alignItems: "center", verticalAlign: "center", textAlign: "center", justifyContent : "center"}}>
             <Typography variant= "h1" component="div" sx={{py: 5, fontWeight: "Bold"}}> Welcome to my Portfolio</Typography>
             <Typography variant= "h3"> These are my past works</Typography>
             <Carousel isWidthBigger={windowSize} >
-                {carouselPosts && carouselPosts.map((value, i) => (
+                {reversePosts && reversePosts.map((value, i) => (
                     <CardObject key={value.title} jsonObject={value}/>
                 ))}
             </Carousel>
